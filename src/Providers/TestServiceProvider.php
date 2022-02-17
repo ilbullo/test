@@ -7,7 +7,12 @@ use Illuminate\Support\ServiceProvider;
 class TestServiceProvider extends ServiceProvider {
 
     public function boot() {
-        dd("We are loading our package service provider");
+
+        // if need routes
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        //if need views
+        $this->loadViewsFrom(__DIR__.'/../views','test');
+
     }
 
     public function register() {}
