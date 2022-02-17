@@ -12,6 +12,18 @@ class TestServiceProvider extends ServiceProvider {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         //if need views
         $this->loadViewsFrom(__DIR__.'/../views','test');
+        //if need migrations
+        $this->loadMigrationsFrom(__DIR__ .'/../database/migrations');
+        $this->mergeConfigFrom(
+            __DIR__ .'/../config/test.php',
+            'test'
+        );
+
+        //pubblish data when do vendor:publish
+        $this->publishes([
+            __DIR__ .'/../config/test.php' => config_path('test.php'),
+            __DIR__.'/../views' => resource_path('views/vendor/test')
+        ]);
 
     }
 
