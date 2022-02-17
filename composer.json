@@ -1,0 +1,19 @@
+{
+    "name": "ilbullo/test",
+    "description": "A very simple test package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco",
+            "email": "ilbullo@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ilbullo\\Test\\" : "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
